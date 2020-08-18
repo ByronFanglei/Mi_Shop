@@ -4,11 +4,14 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 import Home from './views/home'
 // import Storage from './storage'
 import { useEffect } from 'react';
+import axios from './util/axios';
+// import axios from 'axios'
 
-function App() {
+function App(props) {
   useEffect(() => {
-    // console.log(Storage.getAllStorage())
-    // Storage.setItem({'a':1})
+    axios.get('/soso/fcgi-bin/client_search_cp?p=1&n=2&w=泡沫&format=json').then(value => {
+      console.log(value)
+    })
   })
 
 
